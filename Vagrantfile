@@ -50,10 +50,10 @@ SH
       # Debian/Ubuntu
       # $ apt-get install git
       apt-get -y install git
-      # Automatically chdir to vagrant directory upon “vagrant ssh”
+      # Automatically chdir to vagrant directory upon 
       echo "\n\ncd /home/vagrant/mnt\n" >> /home/vagrant/.bashrc
       # Installing Fig
-      curl -L https://github.com/orchardup/fig/releases/download/0.4.2/linux > /usr/local/bin/fig
+      curl -L https://github.com/orchardup/fig/releases/download/0.5.2/linux > /usr/local/bin/fig
       chmod +x /usr/local/bin/fig
 SH
 
@@ -61,7 +61,7 @@ SH
     # Since we mount the dir using NFS we need a private network
     vdocker.vm.network :private_network, ip: "172.17.8.100"
     # Using NFS because some shits, such as Mongod, don't know how to deal with some flavors of partition system
-    vdocker.vm.synced_folder ".", "/home/vagrant/mnt", :nfs => true, :mount_options => ['nolock,vers=3,udp']
+    # vdocker.vm.synced_folder ".", "/home/vagrant/mnt", :nfs => true, :mount_options => ['nolock,vers=3,udp']
 
   end
 
