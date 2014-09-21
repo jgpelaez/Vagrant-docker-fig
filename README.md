@@ -19,6 +19,10 @@ Port [`8282`][port] is published.
 The Vagrantfile folder is automatically mounted ([/home/vagrant/mnt][mnt]) and is the default folder upon `vagrant ssh`.  
 This folder is mounted as [NFS][nfs].  
 
+## Executions
+
+vagrant plugin install vagrant-cachier
+
 ## CPU/RAM
 
 [2 CPU][ncpu]  
