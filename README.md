@@ -30,7 +30,14 @@ Connect to the shared folder using Finder (OS X):
 
 ## Executions
 
-Installs the proxyconf plugin:
+### Environments without proxy server:
+
+Run:
+	vagrant up
+
+### Environments with proxy server:
+
+Install the proxy plugin:
 
 	install-vagrant-proxyconf.cmd
 	
