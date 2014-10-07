@@ -7,21 +7,37 @@ A Vagrant file with Ubuntu trusty64, the latest Docker release, the latest Fig r
 
  - Ubuntu 14.04 LTS (trusty).  
  - the latest Docker release  ([https://docs.docker.com/](https://docs.docker.com/))  
- - Fig 0.4.2                  ([http://orchardup.github.io/fig/](http://orchardup.github.io/fig/))  
+ - Fig 0.5.2                 ([http://orchardup.github.io/fig/](http://orchardup.github.io/fig/))  
  - Git (through apt-get)  
 
 ##Network
 
-IP [`172.17.8.100`][ip]  
-Port [`8282`][port] is published.  
+IP [`192.168.59.103`][ip]  
+ 
 
+The folders (/home/vagrant/git, /home/vagrant/data, /home/vagrant/vmconfig) are shared with the host using samba.
 
-The Vagrantfile folder is automatically mounted ([/home/vagrant/mnt][mnt]) and is the default folder upon `vagrant ssh`.  
-This folder is mounted as [NFS][nfs].  
+Or on Windows, use Explorer to Connect to:
+
+\\192.168.59.103\data
+\\192.168.59.103\git  
+\\192.168.59.103\vmconfig
+
+Connect to the shared folder using Finder (OS X):
+
+	Connect to cifs://192.168.59.103/data
+	Once mounted, will appear as /Volumes/data  
 
 ## Executions
 
-vagrant plugin install vagrant-cachier
+Installs the proxyconf plugin:
+
+	install-vagrant-proxyconf.cmd
+	
+Vagrant up:
+
+	vagrantup.cmd
+
 
 ## CPU/RAM
 
