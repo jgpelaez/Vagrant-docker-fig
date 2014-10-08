@@ -3,6 +3,7 @@ if [%1]==[] goto usage
 if [%2]==[] goto usage
 
 REM MAIN
+cls
 @echo calling vagrant reload
 
 rem VAGRANT_HTTP_PROXY="http://%1:%2@158.169.131.13:8012" 

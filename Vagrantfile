@@ -57,6 +57,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # update and install the lxc-docker package.
       # You may receive a warning that the package isn't trusted.
       # Answer yes to continue installation.
+      if [ -f /etc/default/docker ]; then
+      	cp /etc/default/docker /etc/default/docker.backup
+      fi
       sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
       apt-get -y update
       apt-get -y install lxc-docker
@@ -79,7 +82,7 @@ SH
       # package manager of your Linux distribution.
       # Debian/Ubuntu
       # $ apt-get install git
-      apt-get -y install git
+      # apt-get -y install git
       # Installing Fig
       curl -L https://github.com/orchardup/fig/releases/download/0.5.2/linux > /usr/local/bin/fig
       chmod +x /usr/local/bin/fig
@@ -102,13 +105,8 @@ SH
       echo "Access from windows \\\\192.168.59.103\\vmconfig"
 SH
 
-    # vdocker.vm.network "forwarded_port", guest: 8282, host: 8282
-    # Since we mount the dir using NFS we need a private network
     vdocker.vm.network :private_network, ip: "192.168.59.103"
-    # Using NFS because some shits, such as Mongod, don't know how to deal with some flavors of partition system
-    # vdocker.vm.synced_folder ".", "/home/vagrant/mnt", :nfs => false, :mount_options => ['nolock,vers=3,udp']
 
-	#  vdocker.vm.synced_folder ".", "/vagrant", type: "smb"
   end
 
 end
