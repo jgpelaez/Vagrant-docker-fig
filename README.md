@@ -19,9 +19,9 @@ The folders (/home/vagrant/git, /home/vagrant/data, /home/vagrant/vmconfig) are 
 
 Or on Windows, use Explorer to Connect to:
 
-\\192.168.59.103\data
-\\192.168.59.103\git  
-\\192.168.59.103\vmconfig
+ - \\192.168.59.103\data
+ - \\192.168.59.103\git  
+ - \\192.168.59.103\vmconfig
 
 Connect to the shared folder using Finder (OS X):
 
