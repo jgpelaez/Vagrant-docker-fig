@@ -63,6 +63,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
       apt-get -y update
       apt-get -y install lxc-docker
+  	  # Add vagrant user to the docker group
+      usermod -a -G docker vagrant
 SH
 
     # Create config folder
